@@ -4,6 +4,14 @@ import Vue from 'vue'
 import store from '@/store'
 import App from './App'
 import router from './router'
+import baseAxios from 'axios'
+import VueAxios from 'vue-axios'
+
+const axios = baseAxios.create({
+  baseURL: 'http://localhost:3000/api'
+})
+
+Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
 

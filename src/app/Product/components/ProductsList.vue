@@ -23,6 +23,9 @@ export default {
   },
   created () {
     this.$store.dispatch('getAllProducts')
+    this.$http.get('/ws/01001000/json/').then((response) => {
+      console.log(response.data)
+    })
   }
 }
 </script>
