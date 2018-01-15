@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h1 Producst:
+    h1 Products:
     products-list
 </template>
 
