@@ -1,6 +1,5 @@
 <template lang="pug">
-  div
-    img(src="@/assets/logo.png")
+  header
     | header text
 </template>
 
