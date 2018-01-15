@@ -1,4 +1,5 @@
 import * as types from '@/store/types'
+import http from '@/http'
 
 const state = {
   all: []
@@ -19,8 +20,10 @@ const mutations = {
 
 const actions = {
   getAllProducts ({commit}) {
-    let products = [{id: 1, name: 'p1', inventory: 10}, {id: 2, name: 'p2', inventory: 20}]
-    commit(types.RECEIVE_PRODUCTS, {products})
+    http.get('/products').then((response) => {
+      let products = response.data
+      commit(types.RECEIVE_PRODUCTS, {products})
+    })
   },
   decreaseProductInventory ({commit}, product) {
     if (product.inventory > 0) {
